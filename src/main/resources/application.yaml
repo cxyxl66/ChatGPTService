@@ -1,10 +1,6 @@
 server:
   port: 8085
 spring:
-  mvc:
-    view:
-      prefix: /
-      suffix: .html
   datasource:
     username: root
     password: root

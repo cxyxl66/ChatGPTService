@@ -13,19 +13,33 @@
 
 #### 小程序端
 
-<img src="https://www.jingyoushui.cn/image/87c31b9c-9065-49ab-8883-5abc221ae95a.jpg" alt="微信图片_20230715185509.jpg" style="zoom: 33%;" />
-
-<img src="https://www.jingyoushui.cn/image/45c3751e-ce14-4fb3-9c46-44fe1ff7c5c8.jpg" alt="微信图片_20230715185518.jpg" style="zoom:33%;" />
-
-<img src="https://www.jingyoushui.cn/image/87c31b9c-9065-49ab-8883-5abc221ae95a.jpg" alt="微信图片_20230715185509.jpg" style="zoom: 33%;" />
-
-<img src="https://www.jingyoushui.cn/image/45c3751e-ce14-4fb3-9c46-44fe1ff7c5c8.jpg" alt="微信图片_20230715185518.jpg" style="zoom:33%;" />
+![微信截图_20230715220647.png](https://www.jingyoushui.cn/image/043472e1-4ad9-4b7c-b8ca-e722964165a0.png)
 
 
 
-<img src="https://www.jingyoushui.cn/image/8c5703eb-f1c0-48c1-b8c7-c27d55b97f73.jpg" alt="微信图片_20230715185522.jpg" style="zoom:33%;" />
+![微信截图_20230715220231.png](https://www.jingyoushui.cn/image/267a3d1f-6372-401e-97ac-ab6ccfa2278a.png)
 
-<img src="https://www.jingyoushui.cn/image/a0ae5676-0559-4a41-b139-46b0332a2f07.jpg" alt="微信图片_20230715185528.jpg" style="zoom:33%;" />
 
-<img src="https://www.jingyoushui.cn/image/2f063fa2-95ec-46be-94aa-34b37a4cbdae.jpg" alt="微信图片_20230715185534.jpg" style="zoom:33%;" />
 
+### 使用说明
+
+1.clone该项目 git clone https://github.com/cxyxl66/ChatGPTService.git
+
+2.打开项目，安装依赖，maven install
+
+3.修改application.yaml
+
+- port 修改为自己想使用的端口号
+- spring.datasource.username，修改为自己本地或服务器的数据库用户名，password为数据库密码，url中修改数据库名称
+- 修改chatgpt.apiKey为自己的apiKey，可以去chatGPT官网查看
+- 修改com.cxyxl.util.UrlUtils类，将其中的appid和secret换成自己小程序的appid和secret
+
+4.启动项目即可
+
+
+
+### 求助交流
+
+如果自己尝试过程中，遇到问题，可以关注我的公众号【c程序员修炼】，查看里面具体的文章介绍。或者加我的微信 cxyxl66
+
+![程序员修炼](https://www.jingyoushui.cn/image/e6ea2efe-d0d7-487a-b7a5-c8bf0ee7d005.jpg)
