@@ -1,0 +1,21 @@
+server:
+  port: 8085
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///mychatgpt?useUnicode=true&serverTimezone=Asia/Shanghai&useSSL=false
+
+chatgpt:
+  apiKey: sk-xxx
+  apiHost: https://api.openai.com/
+logging:
+  config: classpath:logback.xml
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

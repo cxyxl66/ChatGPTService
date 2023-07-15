@@ -1,0 +1,61 @@
+2023-05-21 18:31:51 [main] INFO  com.cxyxl.App -Starting App using Java 1.8.0_241 on mysoul with PID 9045 (/home/lixing/IdeaProjects/mychatgpt_server/target/classes started by lixing in /home/lixing/IdeaProjects/mychatgpt_server)
+2023-05-21 18:31:51 [main] INFO  com.cxyxl.App -No active profile set, falling back to default profiles: default
+2023-05-21 18:31:52 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer -Tomcat initialized with port(s): 8080 (http)
+2023-05-21 18:31:52 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-21 18:31:52 [main] INFO  org.apache.catalina.core.StandardService -Starting service [Tomcat]
+2023-05-21 18:31:52 [main] INFO  org.apache.catalina.core.StandardEngine -Starting Servlet engine: [Apache Tomcat/9.0.50]
+2023-05-21 18:31:52 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2023-05-21 18:31:52 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext -Root WebApplicationContext: initialization completed in 814 ms
+2023-05-21 18:31:53 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -Starting ProtocolHandler ["http-nio-8080"]
+2023-05-21 18:31:53 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat server
+2023-05-21 18:31:53 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -Pausing ProtocolHandler ["http-nio-8080"]
+2023-05-21 18:31:53 [main] INFO  org.apache.catalina.core.StandardService -Stopping service [Tomcat]
+2023-05-21 18:31:53 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -Stopping ProtocolHandler ["http-nio-8080"]
+2023-05-21 18:31:53 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -Destroying ProtocolHandler ["http-nio-8080"]
+2023-05-21 18:31:53 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-21 18:31:53 [main] ERROR org.springframework.boot.SpringApplication -Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat server
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.cxyxl.App.main(App.java:32)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat server
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:229)
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:43)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	... 14 common frames omitted
+Caused by: java.lang.IllegalArgumentException: standardService.connector.startFailed
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:243)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:282)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:213)
+	... 16 common frames omitted
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1075)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:239)
+	... 18 common frames omitted
+Caused by: java.net.BindException: 地址已在使用
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:272)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:227)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1208)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1294)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:614)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1072)
+	... 20 common frames omitted

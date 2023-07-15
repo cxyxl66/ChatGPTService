@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cxyxl.dao.RoleDescMapper">
+    <select id="queryRoleDescCount" resultType="integer">
+        select count(id) from role_desc where
+        1 = 1
+        <if test="req.id != null and req.id !=''">
+            and id = #{req.id}
+        </if>
+        <if test="req.categoryId != null and req.categoryId != ''">
+            and role_type_id = #{req.categoryId}
+        </if>
+        <if test="req.title != null and req.title !=''">
+            and title like #{req.title}
+        </if>
+        <if test="req.postStatus != null and req.postStatus != ''">
+            and post_status = #{req.postStatus}
+        </if>
+    </select>
+
+    <select id="queryRoleDesc" resultMap="RoleDescMap">
+        select id,role_id,chat,title,description,image,post_status,sort_num,update_date,create_date
+         from role_desc where
+        1 = 1
+        <if test="req.id != null and req.id !=''">
+            and id = #{req.id}
+        </if>
+        <if test="req.categoryId != null and req.categoryId != ''">
+            and role_type_id = #{req.categoryId}
+        </if>
+        <if test="req.title != null and req.title !=''">
+            and title like #{req.title}
+        </if>
+        <if test="req.postStatus != null and req.postStatus != ''">
+            and post_status = #{req.postStatus}
+        </if>
+        order by sort_num asc, update_date desc
+        limit #{offSet}, #{pageSize}
+
+    </select>
+
+    <resultMap id="RoleDescMap" type="com.cxyxl.bean.RoleDesc">
+        <id column="id" property="id"/>
+        <result column="role_id" property="roleId" />
+        <result column="role_type_id" property="roleTypeId" />
+        <result column="title" property="title" />
+        <result column="description" property="description" />
+        <result column="image" property="image" />
+        <result column="chat" property="chat" />
+        <result column="post_status" property="postStatus" />
+        <result column="sort_num" property="sortNum"/>
+        <result column="update_date" property="updateDate" />
+        <result column="create_date" property="createDate" />
+    </resultMap>
+
+</mapper>
