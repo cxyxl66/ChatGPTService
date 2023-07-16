@@ -45,7 +45,7 @@ public class OpenAIWebSocketEventSourceListener extends EventSourceListener {
             return;
         }
         ObjectMapper mapper = new ObjectMapper();
-        ChatCompletionResponse completionResponse = mapper.readValue(data, ChatCompletionResponse.class); // 读取Json
+        ChatCompletionResponse completionResponse = mapper.readValue(data, ChatCompletionResponse.class);
         String delta = mapper.writeValueAsString(completionResponse.getChoices().get(0).getDelta());
         session.getBasicRemote().sendText(delta);
     }

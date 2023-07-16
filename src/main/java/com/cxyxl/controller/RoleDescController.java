@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author cxyxl
@@ -76,6 +77,40 @@ public class RoleDescController {
         resp.setCount(count);
         resp.setList(publishResps);
         response.setCode(200).setSuccess(true).setData(resp).setMsg("select role desc success");
+        return response;
+    }
+
+    /**
+     * 更改上线状态
+     * @param req
+     * @return
+     */
+    @PostMapping("/audit")
+    public Response audit(@RequestBody Map<String, Object> req) {
+        log.info(req.toString());
+        if (req.get("id") != null && req.get("status") != null) {
+            String id = req.get("id").toString();
+            int status = Integer.parseInt(req.get("status").toString());
+            if(roleDescService.updateStatus(id, status)) {
+                return Response.builder().code(200).msg("audit success").data(true).build();
+            }
+            return Response.builder().code(500).msg("audit failed").data(false).build();
+        }
+        return Response.builder().code(400).msg("request is error").data(false).build();
+    }
+
+    @CrossOrigin
+    @ResponseBody
+    @RequestMapping(value = "/add")
+    public Response postCardContent(@RequestBody RoleReq req){
+        Response response = new Response();
+        log.info(req.toString());
+        try {
+            roleDescService.saveRole(req);
+        } catch (Exception e) {
+            response.setCode(500).setSuccess(false).setData(null).setMsg("save role failed");
+        }
+        response.setCode(200).setSuccess(true).setMsg("save role success");
         return response;
     }
 }

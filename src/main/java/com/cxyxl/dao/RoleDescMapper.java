@@ -4,6 +4,7 @@ import com.cxyxl.bean.RoleDesc;
 import com.cxyxl.model.CommonReq;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -21,4 +22,7 @@ public interface RoleDescMapper {
                                  @Param("req") CommonReq req);
 
     Integer queryRoleDescCount(@Param("req") CommonReq req);
+
+    @Update({"update role_desc set post_status = #{postStatus} where id = #{id}"})
+    int updateStatus(@Param("id") String id, @Param("postStatus") int postStatus);
 }
