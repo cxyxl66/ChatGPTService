@@ -3,6 +3,13 @@
 
 本项目使用spring boot，mysql ，mybaits等实现与ChatGPT官方提供的openAI接口对接，实现了与openAI的对话功能。同时，实现了与前端和微信小程序对接的接口。
 
+
+全面更新，请访问网址：https://ai.jingyoushui.cn
+
+效果图展示：
+
+ [AI应用，源码附赠，轻松打造自己的ChatGPT应用 (qq.com)](https://mp.weixin.qq.com/s?__biz=MzIxMTgyODczNg==&mid=2247485447&idx=1&sn=a6d2b31460f8c613953229c2c6087f21&chksm=974e2168a039a87ee33ef225ff3f91eafa2f66e8aef8b4f3034e4f06de7c0a9c617b6e2cadaf&mpshare=1&srcid=0910tOKcBNPr2ctvOYpHy5GY&sharer_shareinfo=a601e39c2338b3d0201feb526dd9d1c2&sharer_shareinfo_first=a601e39c2338b3d0201feb526dd9d1c2&from=singlemessage&scene=1&subscene=10000&sessionid=1694348220&clicktime=1694352786&enterid=1694352786&ascene=1&fasttmpl_type=0&fasttmpl_fullversion=6846501-zh_CN-zip&fasttmpl_flag=0&realreporttime=1694352786751&devicetype=android-31&version=28002855&nettype=3gnet&lang=zh_CN&exportkey=n_ChQIAhIQQBFZlJh2jVb1vvV41%2BydhhLuAQIE97dBBAEAAAAAAIZ9K4BPM0EAAAAOpnltbLcz9gKNyK89dVj01fD99KRsX7Xr5%2BQfJQmUD65BOJHpu%2BP4%2BAy%2Bg%2Bcl9%2FhBc2K9CuzEm4gR%2Bch4aSDESMg7xIfj3FhVvSLmhUsSMjIa8%2BS9i8wg0MjjnDcc2kW13TcJuxukOwhyL24cK%2BRF8unvECw9QgpJC0REajtp%2F1NwO9oV4tdadVabSjKUErWA019AkEONmlYKSLSSAdQUPuM6TQYjb40HBPGe1L8ex5y9CNl84osEZVO745lUOj26wRBuh5mjdiE%2Blh1OZ4xdDqNL%2FJVEGsk%3D&pass_ticket=qLI56%2BdOGrZaOEyhI1oFW664t089gBTzlOpUIpOWJe4xGfm%2FgiQv%2BT6D5GsXOcDQ&wx_header=3) 
+
 ### 效果图
 
 先来看下效果图，可以看小程序端和前端效果
